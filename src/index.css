@@ -11,3 +11,58 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/* Center the page content with padding */
+.page-container {
+  padding: 2rem;
+}
+
+/* Form styling overrides */
+.form-control {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  font-weight: 600;
+}
+
+/* Table styling for item lists */
+.item-list-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.item-list-table th, .item-list-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Button adjustments */
+.btn-primary, .btn-secondary, .btn-outline-secondary, .btn-outline-danger {
+  margin-right: 0.5rem;
+}
+/* src/index.css */
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #f8f9fa;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  background: #f8f9fa;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
