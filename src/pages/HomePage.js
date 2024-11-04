@@ -12,13 +12,12 @@ const HomePage = () => {
             <h1>Seasoning Inventory App</h1>
             <p>Keep track of your supply!</p>
             <Link to="/seasonings">
-                <Button variant="primary">View Seasonings</Button>
+                <Button className="seasonings-button">Seasonings</Button>
             </Link>
-            <br />
-            <Link to="/sweetenings" style={{ marginTop: '10px' }}>
-                <Button variant="secondary">View Sweetenings</Button>
+            <Link to="/sweetenings" style={{ marginTop: '10px', padding: '10px' }}>
+                <Button className="sweetenings-button">Sweetenings</Button>
             </Link>
-            <img src={seasoningsImage} alt="Seasonings" style={{ width: '90%', height: 'auto' }} />
+            <img src={seasoningsImage} alt="Seasonings" style={{ width: '85%', height: '85%' }} />
         </Container>
   
         
