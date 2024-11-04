@@ -2,8 +2,7 @@
 
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Navbar, Nav, Container } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
+import { Container } from 'react-bootstrap';
 import HomePage from './pages/HomePage';
 import Footer from './components/Footer';
 import SeasoningsPage from './pages/SeasoningsPage';
