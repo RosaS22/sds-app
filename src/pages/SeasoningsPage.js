@@ -1,4 +1,3 @@
-// src/pages/SeasoningsPage.js
 
 import React, { useEffect, useState } from 'react';
 import { fetchSeasonings, deleteItem, addItem, updateItem} from '../services/api';
@@ -14,13 +13,13 @@ const SeasoningsPage = () => {
             const data = await fetchSeasonings();
             setSeasonings(data);
         };
-        loadSeasonings();
+        loadSeasonings(); // load seasonings from the API
     }, []);
 
     const addSeasoning = async (newSeasoning) => {
         const createdSeasoning = await addItem('seasonings', newSeasoning);
         setSeasonings((prev) => [...prev, createdSeasoning]);
-      };
+      }; // Add new seasoning
 
       const updateSeasoning = async (updatedSeasoning) => {
         await updateItem('seasonings', updatedSeasoning.id, updatedSeasoning);
@@ -29,13 +28,13 @@ const SeasoningsPage = () => {
             seasoning.id === updatedSeasoning.id ? updatedSeasoning : seasoning
           )
         );
-        setSelectedSeasoning(null); 
+        setSelectedSeasoning(null); // Reset selected seasoning after update
       };
 
     const handleDelete = async (id) => {
         await deleteItem('seasonings', id);
         setSeasonings((prev) => prev.filter((s) => s.id !== id));
-    };
+    }; // Delete seasoning
 
     const handleEdit = (seasoning) => {
         setSelectedSeasoning(seasoning);

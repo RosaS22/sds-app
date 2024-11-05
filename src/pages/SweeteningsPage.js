@@ -1,7 +1,6 @@
-// src/pages/SweeteningsPage.js
 
 import React, { useEffect, useState } from 'react';
-import { fetchSweetenings, deleteItem } from '../services/api';
+import { fetchSweetenings, deleteItem, addItem, updateItem } from '../services/api';
 import SweeteningForm from '../components/SweeteningForm';
 import SweeteningList from '../components/SweeteningList';
 
@@ -14,14 +13,16 @@ const SweeteningsPage = () => {
             const data = await fetchSweetenings();
             setSweetenings(data);
         };
-        loadSweetenings();
+        loadSweetenings(); // load sweetenings from the API
     }, []);
 
-    const addSweetening = (newSweetening) => {
-        setSweetenings((prev) => [...prev, newSweetening]);
-    };
+    const addSweetening = async (newSweetening) => {
+        const createdSweetening = await addItem('sweetenings', newSweetening);
+        setSweetenings((prev) => [...prev, createdSweetening]);
+    }; // Add new sweetening
 
-    const updateSweetening = (updatedSweetening) => {
+    const updateSweetening = async (updatedSweetening) => {
+        await updateItem('sweetenings', updatedSweetening.id, updatedSweetening)
         setSweetenings((prev) =>
             prev.map((sweetening) =>
                 sweetening.id === updatedSweetening.id ? updatedSweetening : sweetening
@@ -33,7 +34,7 @@ const SweeteningsPage = () => {
     const handleDelete = async (id) => {
       await deleteItem('sweetenings', id);
       setSweetenings((prev) => prev.filter((s) => s.id !== id));
-  };
+  }; // Delete sweetening
 
     const handleEdit = (sweetening) => {
         setSelectedSweetening(sweetening);
