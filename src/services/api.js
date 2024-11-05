@@ -1,6 +1,6 @@
 // src/services/api.js
 
-const BASE_URL = 'https://6704c13dab8a8f892734b53d.mockapi.io';
+const BASE_URL = 'https://67286671270bd0b975553f4d.mockapi.io';
 
 // Fetch all items for a specific resource
 export const fetchItems = async (resource) => {
